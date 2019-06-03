@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')  //adding modules of geting coordinat
 const forecast = require('./utils/forecast')
 
 const app = express() //server made
+const port = process.env.PORT || 3000 //port equal to environment variable..this is used to make port in huroku
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -100,6 +101,6 @@ app.get('*', (req, res) => {  //it is like else bakio p na chla to ye vala chleg
 })
 
 //server started
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
